@@ -113,6 +113,12 @@ resource "aws_elasticache_replication_group" "default" {
       num_node_groups         = var.cluster_mode_num_node_groups
     }
   }
+
+  ignore_tags {
+    keys = [
+      "OriginSnapshotTime"
+    ]
+  }
 }
 
 #
